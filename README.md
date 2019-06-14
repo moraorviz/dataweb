@@ -1,1 +1,1 @@
-A bot for performing data dumps on the local instance of Wikibase using the Wikidata API.
+Flask application
