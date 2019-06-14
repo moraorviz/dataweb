@@ -9,11 +9,17 @@
 {% block content %}
   {% for body in bodies %}
       <div class='cell'>
-      <h1> {{ body.cuerpoLabel['value'] }}</h1>
-      <p> URI: {{ body.cuerpo['value'] }}</p>
-      <p>Tipo: {{ body.tipoLabel['value'] }}</p>
+      <h1 class='name'> {{ body.cuerpoLabel['value'] }}</h1>
+      <p> <label>URI:</label> <span>{{ body.cuerpo['value'] }}</span></p>
+      <p><label>Type of object: </label><span>{{ body.tipoLabel['value'] }} </span></p>
       {% if body.simbadID %}
-        <p>Simbad ID: {{ body.simbadID['value'] }} </p>
+        <p><label>Simbad ID:</label><span> {{ body.simbadID['value'] }} </span></p>
+      {% endif %}
+      {% if body.timeodLabel %}
+        <p><label>Time of discovery:</label> <span>{{ body.timeodLabel['value'] }}</span></p>
+      {% endif %}
+      {% if body.discoveryLabel %}
+        <p><label>Discovery method:</label> <span>{{ body.discoveryLabel['value'] }} </span></p>
       {% endif %}
       </div>
     {% if not loop.last %}

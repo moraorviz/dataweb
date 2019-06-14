@@ -21,4 +21,3 @@ def view():
     bodies = consume.getobjects()
 
     return render_template('show.html', bodies=bodies)
-
