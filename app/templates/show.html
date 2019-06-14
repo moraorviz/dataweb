@@ -1,0 +1,23 @@
+
+
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1 class='title'>{% block title %}Cuerpos celestes{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  {% for body in bodies %}
+      <div class='cell'>
+      <h1> {{ body.cuerpoLabel['value'] }}</h1>
+      <p> URI: {{ body.cuerpo['value'] }}</p>
+      <p>Tipo: {{ body.tipoLabel['value'] }}</p>
+      {% if body.simbadID %}
+        <p>Simbad ID: {{ body.simbadID['value'] }} </p>
+      {% endif %}
+      </div>
+    {% if not loop.last %}
+    {% endif %}
+  {% endfor %}
+{% endblock %}
+
